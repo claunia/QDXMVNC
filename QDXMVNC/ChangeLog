@@ -1,0 +1,5 @@
+2014-05-19  Natalia Portillo  <claunia@claunia.com>
+
+	* Program.cs:
+	  Clear StringBuilder on each new NFO.
+

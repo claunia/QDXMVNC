@@ -30,7 +30,7 @@ namespace QDXMVNC
 
             List<string> artist_paths = new List<string>(Directory.EnumerateDirectories(args[0]));
 
-            StringBuilder nfo_sb = new StringBuilder();
+            StringBuilder nfo_sb;
             int skipped = 0;
             int written = 0;
             int videos = 0;
@@ -69,6 +69,7 @@ namespace QDXMVNC
                             }
                             else
                             {
+                                nfo_sb = new StringBuilder();
                                 nfo_sb.AppendLine("<musicvideo>");
                                 nfo_sb.AppendFormat("\t<album>{0}</album>", System.Security.SecurityElement.Escape(album)).AppendLine();
                                 nfo_sb.AppendFormat("\t<artist>{0}</artist>", System.Security.SecurityElement.Escape(artist)).AppendLine();
@@ -109,6 +110,7 @@ namespace QDXMVNC
                         }
                         else
                         {
+                            nfo_sb = new StringBuilder();
                             nfo_sb.AppendLine("<musicvideo>");
                             nfo_sb.AppendFormat("\t<album>{0}</album>", System.Security.SecurityElement.Escape("[non-album tracks]")).AppendLine();
                             nfo_sb.AppendFormat("\t<artist>{0}</artist>", System.Security.SecurityElement.Escape(artist)).AppendLine();
